@@ -1,0 +1,104 @@
+# The planet's display name. If you want to support multiple languages, use bundles instead!
+localizedName: Black Sunshine
+
+# The mesh of the planet. At least MultiMesh is supported, so you can put multiple
+# NoiseMesh'es to your planet!
+mesh: {
+ # Mesh type. Self-explanatory.
+    type: SunMesh
+    # Noise property.
+    divisions: 3
+    # Noise property.
+    octaves: 4
+    # Noise property.
+    persistence: 0.6
+    # Noise property.
+    scl: 1
+    # No clue what this does, honestly.
+    pow: 1
+    # Yet another noise property.
+    mag: 0.5
+    # Scaling of color values.
+    colorScale: 1
+    # Array of colors to use in your star. Any number of color values can be here!
+    colors: [
+        ff9100
+    ]
+}
+
+# A planet generator. For (H)JSON planets it's pre-determined (AsteroidGenerator) and cannot be changed.
+# But you can at least modify the existing one's fields. Highly not recommended unless you REALLY know what you're doing,
+# better make sector presets and don't waste your time with this.
+generator: {
+  # Mininum amount of asteroids.
+  min: 1
+  # Maximum amount of asteroids.
+  max: 1
+
+  # Noise properties.
+  octaves: 2
+  persistence: 0.4
+  scale: 30
+  mag: 0.4
+  thresh: 1
+  foct: 3
+  fmag: 0.5
+  fscl: 50
+  fper: 0.6
+
+  # Asteroid radius range.
+  radMin: 600
+  radMax: 600
+
+  # This one is ABSOLUTELY pointless, lmao.
+  stoneChance: 0
+
+  # Terrain generation chances, in order: ice > carbon > beryl > ferric.
+  iceChance: 0.5
+  carbonChance: 1
+  berylChance: 0
+  ferricChance: 0
+}
+
+# Make sure this planet is always accessible anytime.
+alwaysUnlocked: false
+# This determines the size of the sector grid.
+# Fun fact: The console will warn you about this "unknown" field, but it also functions properly at the same time.
+sectorSize: 1
+# Spacing between a parent (this) and satellites.
+orbitSpacing: 1
+orbitRadius: 0.2
+orbitOffset: 0
+orbitTime: 30
+# Radius of this planet's sphere.
+radius: 1.05
+# Whether to draw the orbit.
+drawOrbit: false
+# Whether this can be landed on.
+accessible: false
+# Toggle day-night cycle.
+updateLighting: false
+# A number used for sector generation. If == -1, planet ID is picked instead.
+sectorSeed: 529
+# Whether this planet is blooming.
+bloom: false
+# This is self-explanatory...
+visible: true
+# The color of the planet's icon displayed in top-left dialog.
+iconColor: 29302b
+# Another self-explanatory field...
+hasAtmosphere: false
+# Icon's name displayed in top-left dialog.
+icon: commandRally
+# The parent of the planet.
+parent: black-hole-sun
+# The parent of the whole solar system the planet is in. Affects lighting.
+solarSystem: black-hole-sun
+# Items not available in this planet. Commented out because itemWhitelist is used instead as seen below.
+#hiddenItems: [
+#  graphite, plastanium, phase-fabric
+#]
+# Only items available in this planet. Recommended over hiddenItems.
+itemWhitelist: [
+  copper, lead, beryllium, graphite, titanium
+]
